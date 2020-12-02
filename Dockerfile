@@ -1,6 +1,5 @@
 FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.12
 
-
 # install tvhadmin
 RUN \
 	set -ex \
