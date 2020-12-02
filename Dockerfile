@@ -12,5 +12,3 @@ COPY root/ /
 # ports and volumes
 EXPOSE 80
 VOLUME /config /srv/tvhadmin/data
-
-
