@@ -1,4 +1,4 @@
-upstream php5-fpm-sock {
+upstream php7-fpm-sock {
     server 127.0.0.1:9000;
 }
 server {
@@ -6,13 +6,13 @@ server {
   error_log /config/log/nginx/tvhadmin.log info;
   location / {
     alias /srv/tvhadmin/;
-    index index.php;
+    index TVHadmin.php;
     client_max_body_size 0;
 	  location ~* \.php$ {
 		#try_files $uri =404;
 		allow all;
 		include /etc/nginx/fastcgi_params;
-		fastcgi_pass php5-fpm-sock;
+		fastcgi_pass php7-fpm-sock;
 		fastcgi_param SCRIPT_FILENAME /srv/tvhadmin/$fastcgi_script_name;
 		fastcgi_param QUERY_STRING $query_string;
 		fastcgi_intercept_errors off;
