@@ -34,6 +34,11 @@ RUN \
 	/tmp/tvhadmin.tar.gz -C \
 		/srv/tvhadmin --strip-components=1
 
+# configure data location
+RUN \
+	set -ex \
+	&& sed -i 's#data/config#/config/data/config#g' /srv/tvhadmin/include.php
+
 FROM ghcr.io/linuxserver/baseimage-alpine-nginx:${ALPINE_VER}
 
 ############## runtine stage ##############

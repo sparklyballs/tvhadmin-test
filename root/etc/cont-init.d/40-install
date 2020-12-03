@@ -1,5 +1,11 @@
 #!/usr/bin/with-contenv bash
 
+# create our folders
+if [ ! -d "/config/data" ]; then
+	mkdir -p /config/data
+fi
+
 # permissions
 chown -R abc:abc \
+	/config \
 	/srv/tvhadmin
